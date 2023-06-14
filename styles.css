@@ -1,107 +1,104 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-:root{
+:root {
   --text-color: white;
-  --bg-url:url(assets/bg-mobile-dark\ \(1080x1920\).jpg);
-  --stroke-color:rgba(255, 255, 255, 0.5);
-  --surface:rgba(255, 255, 255, 0.1);
-  --surface-hover: rgba(255,255,255, 0.05);
-  --social-link-hover:rgba(255, 255, 255, 0.2);
-  --switch: url(assets/moon.svg) center no-repeat ;
+  --bg-url: url(assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface: rgba(255, 255, 255, 0.1);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --social-link-hover: rgba(255, 255, 255, 0.2);
+  --switch: url(assets/moon.svg) center no-repeat;
 }
-.light{
+.light {
   --text-color: black;
-  --bg-url:url(assets/bg-mobile-light\ \(1080x1920\).jpg);
-  --stroke-color:rgba(0, 0, 0, 0.5);
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
   --surface: rgba(0, 0, 0, 0.05);
-  --surface-hover: rgba(0,0,0, 0.02);
-  --social-link-hover:rgba(0, 0, 0, 0.1);
-  --switch: url(assets/sun.svg) center no-repeat ;
+  --surface-hover: rgba(0, 0, 0, 0.02);
+  --social-link-hover: rgba(0, 0, 0, 0.1);
+  --switch: url(assets/sun.svg) center no-repeat;
 }
-body *{
-  font-family: 'Inter', sans-serif;
+body * {
+  font-family: "Inter", sans-serif;
   color: var(--text-color);
 }
-body{
-  background-image:var(--bg-url);
+body {
+  background-image: var(--bg-url);
   background-repeat: no-repeat;
-  background-position:center center;
+  background-position: center center;
   background-size: cover;
   width: 100%;
   height: 100vh;
 }
-#container{
-  width:100%;
+#container {
+  width: 100%;
   max-width: 588px;
-  padding:0 24px;
-  margin:auto;
+  padding: 0 24px;
+  margin: auto;
   margin-top: 56px;
-
 }
 /*profile*/
-#profile{
+#profile {
   text-align: center;
   padding: 24px;
 }
-#profile img{
+#profile img {
   width: 112px;
   border-radius: 50%;
 }
-#profile p{
+#profile p {
   line-height: 24px;
   font-weight: 500;
-  margin-top: 8px;  
+  margin-top: 8px;
 }
 /*switch*/
-#switch{
+#switch {
   margin: 4px auto;
-  position:relative;
+  position: relative;
   width: 64px;
 }
-#switch button{
+#switch button {
   height: 32px;
   width: 32px;
-  background: white var(--switch) ; 
+  background: white var(--switch);
   border: 0;
   border-radius: 50%;
-  position:absolute;
+  position: absolute;
   left: 0;
   /*como alinhar verticalmente uma div filho absoluta dentro da div pai*/
   top: 50%;
-  transform:translatey(-50%);
-  
+  transform: translatey(-50%);
+
   /*colocar o botao sobre o span*/
   z-index: 1;
 }
-.light #switch button{
+.light #switch button {
   right: 0;
   left: initial;
-  
 }
-#switch span{
-    display: block;
+#switch span {
+  display: block;
   height: 24px;
-  width:64px;
-/* surface-color-light-mode */
-background: var(--surface);
-/* stroke-color-light-mode */
+  width: 64px;
+  /* surface-color-light-mode */
+  background: var(--surface);
+  /* stroke-color-light-mode */
   border: 1px solid var(--stroke-color);
- -webkit-backdrop-filter: blur(4px);
-border-radius: 9999px;
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
 }
 /*links*/
-ul{
+ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 24px 0;
 }
-ul li a{
-  
+ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,36 +109,43 @@ ul li a{
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.3s ;
+  transition: background 0.3s;
 }
 /*Pseudo-selector*/
-ul li a:hover{
+ul li a:hover {
   background-color: var(--surface-hover);
   border: 1.5px solid var(--text-color);
-  
 }
 /*icones*/
-.social-links{
-  padding:24px 0;
+.social-links {
+  padding: 24px 0;
   display: flex;
   justify-content: center;
- 
+
   font-size: 24px;
 }
 
-.social-links a{
+.social-links a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:16px;
+  padding: 16px;
   border-radius: 100%;
   transition: background-color 0.3s;
 }
-.social-links a:hover{
+.social-links a:hover {
   background-color: var(--social-link-hover);
-  
 }
-footer{
+footer {
   padding: 24px 0;
-  text-align:center;
+  text-align: center;
+}
+/*media*/
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
